@@ -1,0 +1,70 @@
+<div class="main-container"> 
+    <nav class="navigator">
+        <div class="container flex">
+            <button mat-button class="logo">
+                <a href="/">
+                    UNI-VERSE
+                </a>
+            </button>
+            <ul class="links self-center">
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        PLAYLISTS
+                    </button>
+                </li>
+                <li>
+                    <mat-menu #menu="matMenu" >
+                        <div *ngFor="let colectie of colectiiFromDB">
+                            <button mat-menu-item >
+                                <a href="/colectie-component/{{colectie.id}}" style = "color: #435259">
+                                    {{colectie.numeColectie}} 
+                                </a>
+                            </button>
+                        </div>
+                    </mat-menu>
+                </li>
+                <li>
+                    <button mat-button>
+                        <a href="/about">ABOUT US</a>
+                    </button>
+                </li>
+                <li>
+                    <button mat-button [matMenuTriggerFor]="contact">
+                        CONTACT
+                    </button>
+                </li>
+                <li>
+                    <mat-menu #contact="matMenu" >
+                            <button mat-menu-item >
+                                <a href="https://twitter.com" style = "color: #435259">
+                                    TWITTER
+                                </a>
+                            </button>
+                            <button mat-menu-item >
+                                <a href="https://instagram.com" style = "color: #435259">
+                                    INSTAGRAM
+                                </a>
+                            </button>
+                            <button mat-menu-item >
+                                <a href="https://facebook.com" style = "color: #435259">
+                                    FACEBOOK
+                                </a>
+                            </button>
+                       
+                    </mat-menu>
+                </li>
+                <li>
+                    <button mat-button>
+                        <a href="/login">LOG IN</a>
+                    </button>
+                </li>
+                <li>
+                    <button mat-button>
+                        <a href="/signup">SIGN UP</a>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+</div>

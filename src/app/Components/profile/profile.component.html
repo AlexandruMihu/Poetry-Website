@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div class="main-content">
+    <div *ngIf="!AddSection" class = "example-container">
+        <button mat-flat-button type="button" (click)="showAddSection()" class = "buton">Add new collection</button>
+        <button mat-flat-button type="button" (click)="logout()" class = "buton">Log Out</button>
+    </div>
+    <div *ngIf="AddSection" class = "example-container1">
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Collection's Title</mat-label>
+                <input matInput type="text" [(ngModel)]="newCollection.numeColectie">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Author's Name</mat-label>
+                <input matInput type="text" [(ngModel)]="newCollection.numeAutor">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Link to a cover image</mat-label>
+                <input matInput type="text" [(ngModel)]="newCollection.cover">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill">
+                <mat-label>Publication Date</mat-label>
+                <input matInput type="text" [(ngModel)]="newCollection.dataPublicare">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Review</mat-label>
+                <textarea matInput placeholder="" [(ngModel)]="newCollection.review"></textarea>
+            </mat-form-field>
+        </div>
+        <button mat-flat-button type="button" *ngIf="!AddPoemSection" (click)="showPoemSection()">Add poem to
+            collection</button>
+        <button mat-flat-button type="button" *ngIf="!AddPoemSection" (click)="addColectie()">Add collection</button>
+
+        <div *ngIf="AddPoemSection">
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Poem Title</mat-label>
+                    <input matInput type="text" [(ngModel)]="newPoem.titlu">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Your Poem</mat-label>
+                    <textarea matInput placeholder="" [(ngModel)]="newPoem.text"></textarea>
+                </mat-form-field>
+            </div>
+
+            <button mat-flat-button type="button" (click)="addPoem()">Add poem</button>
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>
+<app-header></app-header>

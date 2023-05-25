@@ -1,0 +1,130 @@
+<app-header></app-header>
+<div class="home-page">
+        <main>
+            <div class="welcome">
+                <div class="container group">
+                    <div class="welcome-content">
+                        <h1>
+                            Find poems,
+                            <br>
+                            write verses
+
+                        </h1>
+                        <div class="descriere">
+                            <p>
+                                Get a new poems in the form of a playlist straight to your inbox each week. You’ll receive set of poems around a
+                                different theme, with a focus on contemporary poets. It’s free, and you can unsubscribe
+                                anytime.
+                                <a href="/about">Read more about us</a>
+
+                            </p>
+                            <div class="input-div">
+                                <div class="flex  gap-3 flex-col">
+                                    <form class=" md:flex-row flex gap-2 flex-col subscribe-form" method="post"
+                                        novalidate="">
+                                        <div class="flex gap-2 flex-col ">
+                                            <label>
+                                                <input type="text" value=""
+                                                    class="border-red-300 rounded  border-2 focus:outline-none "
+                                                    placeholder="Your email address">
+                                            </label>
+                                        </div>
+                                        <div class="md:flex-col flex  gap-2 flex-wrap"> 
+                                            <input type="submit" class="block !w-auto   rounded visible p-0 !leading-none"
+                                                value="Subscribe">
+                                            <div class="self-center font-bold uppercase text-gray-300 text-center cursor-pointer hover:text-white"
+                                                style="font-size:12px;font-family:acumin-pro-wide, sans-serif">
+                                                <a href="/signup" >OR SIGN UP</a>    
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lansari">
+                <h2>
+                    Playlists from different authors
+                </h2>
+                <mat-grid-list cols="6" rowHeight="1:1.5">
+                    <mat-grid-tile *ngFor="let colectie of colectiiFromDB">
+                        <a href="/colectie-component/{{colectie.id}}">
+                            <div>
+                                <div class="coperta">
+                                    <img src="{{colectie.cover}}" >
+
+                                </div>
+                                <div class="info">
+                                    <h3>
+                                        {{colectie.numeColectie}}
+                                    </h3>
+                                    <em>
+                                        by {{colectie.numeAutor}}
+                                    </em>
+                                </div>
+
+                            </div>
+                        </a>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+            
+            <div class="previews">
+                <div *ngFor="let colectie of colectiiFromDB; let i = index" >
+                    <div *ngIf="i<4">
+                        <div class="playlist group">
+                            <div class="container">
+                                <div class="group aside-text-wrapper">
+                                    <p class="aside-text">
+                                        Featured on {{colectie.dataPublicare}}
+
+                                    </p>
+                                    <div class="synopsis">
+                                        <h1>
+                                            <a href="/colectie-component/{{colectie.id}}">
+                                                {{colectie.numeColectie}}
+                                            </a>
+                                        </h1>
+                                        <em class="autor">
+                                            Playlist by
+                                            <span>
+                                                {{colectie.numeAutor}}
+                                            </span>
+                                        </em>
+                                        <p>
+                                            {{colectie.review}}
+                                        </p>
+                                        <a class="continue-reading" href="/colectie-component/{{colectie.id}}">View playlist to
+                                            continue reading</a>
+
+                                    </div>
+                                    <div class="lista">
+                                        <ol>
+                                            <div *ngFor="let poezie of colectie.poezii">
+                                                <li>
+                                                    <a href="/colectie-component/{{colectie.id}}#{{poezie.idPoezie}}">
+                                                        <strong>
+                                                            {{poezie.titlu}}
+                                                        </strong>
+                                                    </a>
+                                                </li>
+                                            </div>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </main>
+</div>
+
+<app-footer></app-footer>
+<app-header></app-header>

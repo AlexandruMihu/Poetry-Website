@@ -1,0 +1,108 @@
+<app-header></app-header>
+<div class = "main-content">
+    <div class = "playlist-page">
+        <div class = "playlist-header">
+            <div class = "container group">
+                <aside>
+                    <div class = "aside-text-wrapper">
+                        <p class = "aside-text">
+                            Featured on 
+                            {{colectie?.dataPublicare}}
+                        </p>
+                    </div>
+                    <div class = "book-playlist">
+                        <img src="{{colectie?.cover}}" alt="">
+        
+                    </div>
+                    <div class = "playlist-list">
+                        <ol>
+                            <div *ngFor = "let poezie of colectie?.poezii" >
+                                <li>
+                                    <a href="/colectie-component/{{colectie?.id}}#{{poezie?.idPoezie}}">
+                                        <strong>
+                                            {{poezie?.titlu}}
+                                        </strong>
+                                    </a>
+                                </li>
+                            </div>
+                        </ol>
+                    </div>
+        
+                </aside>
+                <div class = "playlist-description">
+                    <h1>
+                        {{colectie?.numeColectie}}
+                    </h1>
+                    <em class = "byline">
+                        Playlist by 
+                        {{colectie?.numeAutor}}
+                    </em>
+                    <p>
+                        {{colectie?.review}}
+                    </p>
+                    <div class = "share-this">
+                        <h2>Share this playlist</h2>
+                        <ul>
+                            <li>
+                                <a target="_blank" rel="noreferrer noopener" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Flocalhost%3A4200%2Fcolectie-component%2F{{colectie?.id}}" class="link-social-twitter rounded"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocalhost%3A4200%2Fcolectie-component%2F{{colectie?.id}}" class="link-social-facebook rounded"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noreferrer noopener" href="mailto:?subject=Check%20out%20this%20poem&amp;body=https%3A%2F%2Flocalhost%3A4200%2Fcolectie-component%2F{{colectie?.id}}" class="link-social-mail rounded"></a>
+                            </li>
+                        </ul>
+        
+                    </div>
+        
+                </div>
+                
+            </div>
+        </div>
+        
+        <div *ngFor = "let poezie of colectie?.poezii" class="content-module">
+            <div class = "container group">
+                <div  id = {{poezie?.idPoezie}} class = "content">
+                    <h1>
+                        {{poezie?.titlu}}
+                    </h1>
+                    <div class = "text indent-text" style="white-space: pre-wrap">
+                        {{poezie?.text}}
+                    </div>
+                </div>
+                <aside>
+                    <div class = "share-this">
+                        <h2>
+                           Share this poem 
+                        </h2>
+                        <ul>
+                            <li>
+                                <a target="_blank" rel="noreferrer noopener" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Flocalhost%3A4200%2Fcolectie-component%2F{{colectie.id}}" class="link-social-twitter rounded"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noreferrer noopener" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flocalhost%3A4200%2Fcolectie-component%2F{{colectie.id}}" class="link-social-facebook rounded"></a>
+                            </li>
+                            <li>
+                                <a target="_blank" rel="noreferrer noopener" href="mailto:?subject=Check%20out%20this%20poem&amp;body=https%3A%2F%2Flocalhost%3A4200%2Fcolectie-component%2F{{colectie.id}}" class="link-social-mail rounded"></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </aside>
+
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+
+</div>
+
+<app-footer></app-footer>
+<app-header></app-header>

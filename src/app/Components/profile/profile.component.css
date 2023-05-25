@@ -1,0 +1,55 @@
+
+.main-content{
+    color: #435259;
+    background: #f5f4f0;
+    font-family: abril-text,serif;
+    line-height: 1.5em;
+    -webkit-font-smoothing: antialiased;
+    min-height: 54.9vh;
+    margin: 0; 
+    padding: 75px;
+    border: 0;
+    display: block;
+}
+.example-container {
+  margin: auto;
+  width: 400px;
+  padding: 20px;
+  background-color: #435259;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  color: #f5f4f0;
+  display: block;
+}
+
+.example-container1 {
+  margin: auto;
+  width: 450px;
+  padding: 30px;
+  background-color: #435259;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  color: #f5f4f0;
+  display: block;
+}
+
+.buton{
+  display: block;
+  margin:auto;
+}
+
+button[type="button"] {
+  width: 90%;
+  margin:20px;
+  font-size: 1.2rem;
+}
+
+mat-form-field {
+  width: 90%;
+}
+mat-label{
+  width: 90%;
+}
+

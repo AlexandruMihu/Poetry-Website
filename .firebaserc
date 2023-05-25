@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "login-ceva": {
+      "hosting": {
+        "poetry-site": [
+          "login-ceva"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "login-ceva"
+  }
+}
